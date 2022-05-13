@@ -194,9 +194,7 @@ header .container::after {
 @media (min-width: 767px){
     .container nav .toggle-menu {
         display: none;
-
-    }
-    
+    }  
 }
 @media (max-width: 767px) {
     .container .menu-bar {
@@ -223,10 +221,11 @@ header .container::after {
 /* start-landing */
 .landing {
     background-color: #000000b3;
-    background-image: url(../img/wallpaperflare.com_wallpaper.jpg);
+    background-image: url(../img/slideBackgroundColor.png);
     height: 100vh;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 .overlay {
     position: absolute;
@@ -235,6 +234,22 @@ header .container::after {
     background-color: var(--main-overlay-color);
     width: 100%;
     height: 100%;
+    z-index: 1;
+}
+.landing img {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    right: -100%;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out ;
+}
+.active-img {
+    position: absolute !important;
+    right: 0 !important;
+    opacity: 1 !important;
+    /* transition: 1s; */
 }
 .landing .text {
     position: absolute;
@@ -248,6 +263,7 @@ header .container::after {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 3;
 }
 
 .landing .text .content {
@@ -305,12 +321,10 @@ header .container::after {
     
 }
 .landing ul {
-display: flex;
-position: absolute;
-bottom: 3%;
-right: calc(50% - 23.51px);
-
-
+    display: flex;
+    position: absolute;
+    bottom: 3%;
+    right: calc(50% - 23.51px);
 }
 .landing ul li {
     width: 1.8vh;
@@ -318,6 +332,7 @@ right: calc(50% - 23.51px);
     border-radius: 50%;
     border: 1px solid white;
     margin-left: 4px;
+    z-index: 2;
 }
 .landing ul li.dark {
     background-color: var(--main-half-color);
@@ -329,6 +344,7 @@ right: calc(50% - 23.51px);
     color: white;
     cursor: pointer;
     transition: 0.3s;
+    z-index: 10;
 }
 .landing .directions .direct_left:hover {
     transform: translateX(-5px) scale(1.1);
@@ -341,6 +357,8 @@ right: calc(50% - 23.51px);
     color: white;
     transition: 0.3s;
     cursor: pointer;
+    z-index: 10;
+
 }
 .landing .directions .direct-right:hover {
     transform: translateX(5px) scale(1.1);
