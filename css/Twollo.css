@@ -322,13 +322,15 @@ header .container::after {
 }
 .landing ul {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 3%;
     right: calc(50% - 23.51px);
 }
 .landing ul li {
-    width: 1.8vh;
-    height: 1.8vh;
+    width: 2vh;
+    height: 2vh;
     border-radius: 50%;
     border: 1px solid white;
     margin-left: 4px;
@@ -336,6 +338,10 @@ header .container::after {
 }
 .landing ul li.dark {
     background-color: var(--main-half-color);
+    width: 2.4vh;
+    height: 2.4vh;
+    border: 1px solid white;
+    transition: background-color 1s ease-out;
 }
 .landing .directions .direct_left {
     position: absolute;
