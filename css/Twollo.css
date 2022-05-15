@@ -208,7 +208,7 @@ header .container::after {
     top: 99%;
     right: 0px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #00000000;
     z-index: 2;
 }
 .container nav .toggle-menu:hover + ul li {
